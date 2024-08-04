@@ -1,0 +1,127 @@
+/* admission-form */
+
+  .name{
+    font-size: 50px;
+    font-weight: bold;
+    }
+    .form-subheading{
+        font-weight: bold;
+        
+    }
+    .form-control{
+        background-color: transparent;
+    }
+    .heading{
+        text-align: center;
+        margin-bottom: 20px;
+    
+    }
+    form{
+        margin-left: 10%;
+        margin-right: 2%;
+        outline: none;
+        align-items: center;
+        justify-content: center;  
+        margin-bottom: -18px;
+       
+    }
+    
+    .header{
+        text-align: center;
+    
+    
+    }
+    .box {
+        margin: auto;
+        width: 30%;
+        font-weight: bold;
+        color:#009970;
+      }
+    
+      .form-label{
+       font-weight: 600;
+       outline: none;
+       box-shadow: none;
+       /* margin-top: 7%; */
+       padding-top: 15px;
+       margin-left: -50px;
+       color:black
+    
+     
+      }
+    
+    
+      input[type=text] {
+        border: none;
+        border-bottom: 1px solid rgb(107, 101, 101);
+        border-radius: 0px;
+        margin-bottom: 10px;
+        box-shadow: none;
+    
+      }
+      input[type=number] {
+        border: none;
+        border-bottom: 1px solid rgb(107, 101, 101);
+        border-radius: 0px;
+        margin-bottom: 10px;
+        box-shadow: none;
+    
+      }
+      .asterix{
+        color: red;
+        font-size: 17px;
+      }
+    
+      .form-control{
+        box-shadow: none !important;
+        border-color: black !important;
+        margin-top: -10x;
+      }
+    
+      .row{
+        font-size: 14px;
+        margin-bottom: -20px;
+      }
+      
+      .declaration{
+        text-align: center;
+        margin-top: 20px;
+    }
+      .instruction{
+     max-width: 90%;
+      }
+      h2{
+        margin-left: 30px;
+       
+      }
+      .submit{
+        justify-content: center;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+
+    @media only screen and (max-width: 600px) {
+      .form-label{
+        margin-left: 0px;
+      
+      }
+
+      .box {
+        margin: auto;
+        width: fit-content;
+        padding: 2px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .media{
+        margin: 0px !important;
+      }
+    }
+    
+
+    
+    
+  
