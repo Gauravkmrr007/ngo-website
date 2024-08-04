@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hr | Contact</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="/custom-css/custom.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="/assets/img/loading.gif" alt="AdminLTELogo" height="40" width="40">
+        </div>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="/dashboard" class="nav-link">Home</a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-link">
+                <img src="#" alt="" class="brand-image img-circle " style="opacity: .8">
+                <span class="brand-text font-weight-light">HR</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar pt-3">
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item">
+                            <a href="/dashboard" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/pages/login" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Login
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Employee
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/pages/employee/add_employee" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Employee</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pages/employee/employee_list" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Employee List</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content pt-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <form id="addContact" class="needs-validation">
+                                    <p>
+                                        Employee Details
+                                    </p>
+                                    <div class="card-body">
+                                        <table class="table table-bordered table-striped">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Employee Name:</label>
+                                                        <input type="text" name="employee_name" class="form-control"
+                                                            id="employeeName" value="<%= employee_name %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Employee Code:</label>
+                                                        <input type="text" name="employee_code" class="form-control"
+                                                            id="employeeList" value="<%= employee_code %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Department:</label>
+                                                        <input type="text" name="department" class="form-control"
+                                                            id="department" value="<%=  department %>">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Employee Designation:</label>
+                                                        <input type="text" name="employee_designation"
+                                                            class="form-control" id="employeeDesignation"
+                                                            value="<%= employee_designation %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Work Location:</label>
+                                                        <input type="text" name="work_location" class="form-control"
+                                                            id="workLocation" value="<%= work_location %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Reporting Manager:</label>
+                                                        <input type="text" name="reporting_manager" class="form-control"
+                                                            id="reportingManager" value="<%=reporting_manager %>">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Employee Type:</label>
+                                                        <input type="text" name="employee_type" class="form-control"
+                                                            id="employeeType" value="<%= employee_type %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Company E-mail Id:</label>
+                                                        <input type="text" name="company_email" class="form-control"
+                                                            id="workLocation" value="<%= company_email %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Date of Joining:</label>
+                                                        <input type="tel" name="doj" class="form-control" id="doj"
+                                                            value="<%= new Date(employee_doj).toLocaleDateString() %>">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Work Phone:</label>
+                                                        <input type="text" name="reporting_manager" class="form-control"
+                                                            id="reportingManager" value="<%= work_phone %>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </table>
+                                    </div>
+                                </form>
+
+
+                                <form method="post" action="add_employeeDetails" id="addEmployeeDetailsForm"
+                                    class="needs-validation">
+                                    <div class="card-body">
+                                        <!-- Add work -->
+                                        <p>
+                                            Work Information
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Company<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="company" class="form-control" id="company">
+                                                    <div id="company-feedback" class="invalid-feedback">Company name is
+                                                        not valid!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>H.O.D</label>
+                                                    <input type="text" name="hod" class="form-control" id="hod">
+                                                    <div class="invalid-feedback">
+                                                        HOD name cannot be
+                                                        empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Business Unit:</label>
+                                                    <input type="text" name="business_unit" class="form-control"
+                                                        id="businessUnit">
+                                                    <div id="businessUnit-feedback" class="invalid-feedback">Business
+                                                        Unit is not
+                                                        valid!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Function:</label>
+                                                    <input type="text" name="function" class="form-control"
+                                                        id="function">
+                                                    <div class="invalid-feedback">
+                                                        Function cannot be
+                                                        empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Grade:</label>
+                                                    <input type="text" name="grade" class="form-control" id="grade">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Grade Level<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="grade_level" class="form-control"
+                                                        id="gradeLevel">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid Grade level!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Role<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="role" class="form-control" id="role">
+                                                    <div class="invalid-feedback">
+                                                        Role cannot be empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Designation<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="designation" class="form-control"
+                                                        id="designation">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid designation!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Corporate:</label>
+                                                    <input type="text" name="corporate" class="form-control"
+                                                        id="corporate">
+                                                    <div id="corporate-feedback" class="invalid-feedback">Please
+                                                        enter a valid Corporate name!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Office / Plant</label>
+                                                    <input type="text" name="office" class="form-control" id="office">
+                                                    <div id="office-feedback" class="invalid-feedback">
+                                                        Office / Plant cannot be
+                                                        empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Supervisor Name</label>
+                                                    <input type="text" name="supervisor_name" class="form-control"
+                                                        id="supervisorName">
+                                                    <div id="supervisor-feedback" class="invalid-feedback">Please
+                                                        enter a valid Supervisor Name!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Supervisor:</label>
+                                                    <input type="text" name="supervisor" class="form-control"
+                                                        id="supervisor">
+                                                    <div id="supervisor-feedback" class="invalid-feedback">Please
+                                                        enter a valid Supervisor!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Employee Relationship Officer:</label>
+                                                    <input type="text" name="employee_officer" class="form-control"
+                                                        id="employeeOfficer">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid Employee Relationship Officer!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Employee term</label>
+                                                    <input type="text" name="employement_term" class="form-control"
+                                                        id="employementTerm">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Add Work end -->
+
+                                        <!-- Add contact -->
+                                        <p>
+                                            Official Contact
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Address Line 1<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="ofc_employee_address1" class="form-control"
+                                                        id="ofcEmployeeAddress1">
+                                                    <div class="invalid-feedback">
+                                                        Employee Address field cannot be empty!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Address Line 2:</label>
+                                                    <input type="address" name="ofc_employee_address2"
+                                                        class="form-control" id="ofcEmployeeAddress2">
+                                                    <div class="invalid-feedback">
+                                                        Employee
+                                                        Address field cannot be empty!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>City<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="ofc_city" class="form-control"
+                                                        id="ofcCity">
+                                                    <div class="invalid-feedback">City name cannot be
+                                                        empty! </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Pin Code<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="ofc_pincode" class="form-control"
+                                                        id="ofcPincode">
+                                                    <div class="invalid-feedback">Pincode field
+                                                        cannot be empty!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Country<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="ofc_country" class="form-control"
+                                                        id="ofcCountry">
+                                                    <div class="invalid-feedback">Country is not
+                                                        valid!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Work email:</label>
+                                                    <input type="email" name="ofc_work_email" class="form-control"
+                                                        id="ofcWorkEmail">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid Work Location!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Employee Email Id<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="ofc_employee_email_id" class="form-control"
+                                                        id="ofcEmployeeEmailId">
+                                                    <div class="invalid-feedback">
+                                                        Employee Id cannot be
+                                                        empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Mobile Phone<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="ofc_mobile_phone" class="form-control"
+                                                        id="ofcMobilePhone">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid phone number!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Work Phone:</label>
+                                                    <input type="text" name="ofc_work_phone" class="form-control"
+                                                        id="ofcWorkPhone">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Work Phone Extn:</label>
+                                                    <input type="text" name="ofc_work_phone_extn" class="form-control"
+                                                        id="ofcWorkPhoneExtn">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p>
+                                            Local Contact
+                                        </p>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Address Line 1<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="local_employee_address1"
+                                                        class="form-control" id="localEmployeeAddress1">
+                                                    <div class="invalid-feedback">
+                                                        Employee Address field cannot be empty!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Address Line 2:</label>
+                                                    <input type="address" name="local_employee_address2"
+                                                        class="form-control" id="localEmployeeAddress2">
+                                                    <div class="invalid-feedback">
+                                                        Employee
+                                                        Address field cannot be empty!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>City<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="local_city" class="form-control"
+                                                        id="localCity">
+                                                    <div class="invalid-feedback">City name cannot be
+                                                        empty! </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Pin Code<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="local_pincode" class="form-control"
+                                                        id="localPincode">
+                                                    <div class="invalid-feedback">Pincode field
+                                                        cannot be empty!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Country:</label>
+                                                    <input type="text" name="local_country" class="form-control"
+                                                        id="localCountry">
+                                                    <div class="invalid-feedback">Country is not
+                                                        valid!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Work email:</label>
+                                                    <input type="email" name="local_work_email" class="form-control"
+                                                        id="localWorkEmail">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid Work Location!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Employee Email Id:</label>
+                                                    <input type="text" name="local_employee_emailId"
+                                                        class="form-control" id="localEmployeeEmailId">
+                                                    <div class="invalid-feedback">
+                                                        Employee Id cannot be
+                                                        empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Mobile Phone:</label>
+                                                    <input type="text" name="local_mobile_phone" class="form-control"
+                                                        id="localMobilePhone">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid phone number!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Work Phone:</label>
+                                                    <input type="text" name="local_work_phone" class="form-control"
+                                                        id="localWorkPhone">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Work Phone Extn:</label>
+                                                    <input type="text" name="local_work_phone_extn" class="form-control"
+                                                        id="localWorkPhoneExtn">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p>
+                                            Permanent Contact
+                                        </p>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Address Line 1:</label>
+                                                    <input type="text" name="pmnt_employee_address1"
+                                                        class="form-control" id="pmntEmployeeAddress1">
+                                                    <div class="invalid-feedback">
+                                                        Employee Address field cannot be empty!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Address Line 2:</label>
+                                                    <input type="address" name="pmnt_employee_address2"
+                                                        class="form-control" id="pmntEmployeeAddress2">
+                                                    <div class="invalid-feedback">
+                                                        Employee
+                                                        Address field cannot be empty!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>City:</label>
+                                                    <input type="text" name="pmnt_city" class="form-control"
+                                                        id="pmntCity">
+                                                    <div class="invalid-feedback">City name cannot be
+                                                        empty! </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Pin Code:</label>
+                                                    <input type="text" name="pmnt_pincode" class="form-control"
+                                                        id="pmntPincode">
+                                                    <div class="invalid-feedback">Pincode field
+                                                        cannot be empty!</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Country:</label>
+                                                    <input type="text" name="pmnt_country" class="form-control"
+                                                        id="pmntCountry">
+                                                    <div class="invalid-feedback">Country is not
+                                                        valid!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Work email:</label>
+                                                    <input type="email" name="pmnt_work_email" class="form-control"
+                                                        id="pmntWorkEmail">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid Work Location!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Employee Email Id:</label>
+                                                    <input type="text" name="pmnt_employee_email_id"
+                                                        class="form-control" id="pmntEmployeeEmailId">
+                                                    <div class="invalid-feedback">
+                                                        Employee Id cannot be
+                                                        empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Mobile Phone:</label>
+                                                    <input type="text" name="pmnt_mobile_phone" class="form-control"
+                                                        id="pmntMobilePhone">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid phone number!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Work Phone:</label>
+                                                    <input type="text" name="pmnt_work_phone" class="form-control"
+                                                        id="pmntWorkPhone">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Work Phone Extn:</label>
+                                                    <input type="text" name="pmnt_work_phone_extn" class="form-control"
+                                                        id="pmntWorkPhoneExtn">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Add Contact end -->
+
+                                        <!-- Add Personal Details -->
+                                        <p>
+                                            Personal Details
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Aadhaar Card<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="aadhaar_number" class="form-control"
+                                                        id="aadhaarNumber">
+                                                    <div class="invalid-feedback">Aadhaar number cannot be empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>PAN Card<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="pan_number" class="form-control"
+                                                        id="panNumber">
+                                                    <div class="invalid-feedback">Pan Card Number cannot be empty
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>PF number<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="pf_number" class="form-control"
+                                                        id="pfNumber">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Gender<span class="asterix">*</span>:</label>
+                                                    <select name="gender" id="gender" class="form-control">
+                                                        <option value="">Select Gender</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Others">Others</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Date of Birth<span class="asterix">*</span>:</label>
+                                                    <input type="date" name="dob" class="form-control" id="dob">
+                                                    <div class="invalid-feedback">Enter Date of Birth!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Employee Relationship Office</label>
+                                                    <input type="text" name="employee_officer" class="form-control"
+                                                        id="employeeOfficer">
+                                                    <div class="invalid-feedback">Please
+                                                        enter a valid Employee Relationship Office!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- personal information end -->
+
+                                        <!-- Education Details start -->
+                                        <p>
+                                            Education Details
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Education Level<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="education_level" class="form-control"
+                                                        id="educationLevel">
+                                                    <div class="invalid-feedback">Education level cannot be empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Qualification / Degree<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="qualification" class="form-control"
+                                                        id="qualification">
+                                                    <div class="invalid-feedback">Qualification / Degree cannot be empty
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>College / Institute / University<span
+                                                            class="asterix">*</span>:</label>
+                                                    <input type="text" name="institute_name" class="form-control"
+                                                        id="instituteName">
+                                                    <div class="invalid-feedback">College / Institute / University
+                                                        cannot be empty
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Area Of Specialisation:</label>
+                                                    <input type="text" name="specialisation" class="form-control"
+                                                        id="specialisation">
+                                                    <div class="invalid-feedback">Area Of Specialisation
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Year Of Passing<span class="asterix">*</span>: </label>
+                                                    <input type="number" name="passing_year" class="form-control"
+                                                        id="passingYear">
+                                                    <div class="invalid-feedback">Please enter Passing Year!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Score<span class="asterix">*</span>:</label>
+                                                    <input type="number" name="score" class="form-control" id="score">
+                                                    <div class="invalid-feedback">
+                                                        Score field cannot be empty!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Highest Education Level:</label>
+                                                    <input type="text" name="highest_education" class="form-control"
+                                                        id="highestEducation">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Received in this Employement:</label>
+                                                    <input type="text" name="received_employement" class="form-control"
+                                                        id="receivedEmployment">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Education Details end -->
+
+                                        <!-- Experience Details start -->
+                                        <p>
+                                            Experience Details
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Organization Name:</label>
+                                                    <input type="text" name="organization_name" class="form-control"
+                                                        id="organizationName">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Period From:</label>
+                                                    <input type="date" name="period_from" class="form-control"
+                                                        id="periodFrom">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Period To:</label>
+                                                    <input type="date" name="period_to" class="form-control"
+                                                        id="periodTo">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Designation:</label>
+                                                    <input type="text" name="exp_designation" class="form-control"
+                                                        id="expDesignation">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Key Roles and Responsibilities: </label>
+                                                    <input type="text" name="key_roles" class="form-control"
+                                                        id="keyRoles">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Significant Achievements:</label>
+                                                    <input type="text" name="achievements" class="form-control"
+                                                        id="achievements">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Experience Details end -->
+
+                                        <!-- Emergency Details start -->
+                                        <p>
+                                            Emergency Details
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Emergency Contact Person<span
+                                                            class="asterix">*</span>:</label>
+                                                    <input type="text" name="emergency_contact_person"
+                                                        class="form-control" id="emergencyContactPerson">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Contact Relationship<span class="asterix">*</span>:</label>
+                                                    <select name="contact_relationship" class="form-control"
+                                                        id="contactRelationship">
+                                                        <option value="">Select Relationship</option>
+                                                        <option value="Father">Father</option>
+                                                        <option value="Mother">Mother</option>
+                                                        <option value="Brother">Brother</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Contact Person Number<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="contact_person_number" class="form-control"
+                                                        id="contactPersonNumber">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>City:</label>
+                                                    <input type="text" name="emergency_city" class="form-control"
+                                                        id="emergencyCity">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>State: </label>
+                                                    <input type="text" name="emergency_state" class="form-control"
+                                                        id="emergencyState">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Zip:</label>
+                                                    <input type="text" name="emergency_zip" class="form-control"
+                                                        id="emergencyZip">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Country:</label>
+                                                    <input type="text" name="emergency_country" class="form-control"
+                                                        id="emergencyCountry">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Taking any Medications?<span class="asterix">*</span></label>
+                                                    <select name="medications" class="form-control" id="medications">
+                                                        <option value="">Select</option>
+                                                        <option value="yes">Yes</option>
+                                                        <option value="no">no</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Blood Group<span class="asterix">*</span>:</label>
+                                                    <select name="blood_group" class="form-control" id="bloodGroup">
+                                                        <option value="">Select Blood Group</option>
+                                                        <option value="A+">A+</option>
+                                                        <option value="A-">A-</option>
+                                                        <option value="B+">B+</option>
+                                                        <option value="B-">B-</option>
+                                                        <option value="AB+">AB+</option>
+                                                        <option value="AB-">AB-</option>
+                                                        <option value="O+">O+</option>
+                                                        <option value="O-">O-</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Doctor Name:</label>
+                                                    <input type="text" name="doctor_name" class="form-control"
+                                                        id="doctorName">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Doctor Home Phone: </label>
+                                                    <input type="tel" name="doctor_home_phone" class="form-control"
+                                                        id="doctorHomePhone">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Doctor Mobile Phone: </label>
+                                                    <input type="tel" name="doctor_mobile_phone" class="form-control"
+                                                        id="doctorMobilePhone">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Emergency Details end -->
+
+                                        <!-- Family Details start -->
+                                        <p>
+                                            Family Details
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Name<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="family_member_name" class="form-control"
+                                                        id="familyMemberName">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Relationship<span class="asterix">*</span>:</label>
+                                                    <input type="text" name="family_relationship" class="form-control"
+                                                        id="familyRelationship">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Occupation</label>
+                                                    <input type="text" name="family_occupation" class="form-control"
+                                                        id="familyOccupation">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Date of Birth:</label>
+                                                    <input type="date" name="family_dob" class="form-control"
+                                                        id="familyDob">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Age: </label>
+                                                    <input type="number" name="family_age" class="form-control"
+                                                        id="familyAge">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Dependent:</label>
+                                                    <input type="text" name="family_dependent" class="form-control"
+                                                        id="familyDependent">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Gender:</label>
+                                                    <select name="family_gender" id="familyGender" class="form-control">
+                                                        <option value="Male" selected>Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Others">Others</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Nationality:</label>
+                                                    <input type="text" name="family_nationality" class="form-control"
+                                                        id="familyNationality">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Expired: </label>
+                                                    <input type="text" name="family_expired" class="form-control"
+                                                        id="familyExpired">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Working: </label>
+                                                    <input type="text" name="family_working" class="form-control"
+                                                        id="familyWorking">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Family Details end -->
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <button type="submit" class="btn btn-success"
+                                            onclick="addEmployeeDetails();">Submit</button>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright Pokho Group &copy; 2023-2024 </strong> All rights reserved.
+    </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="/assets/plugins/jquery/jquery.min.js"></script>
+    <!--Include jquery offline  -->
+    <script src="/js/jquery.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <!-- bs-custom-file-input -->
+    <script src="/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/assets/dist/js/adminlte.min.js"></script>
+    <!-- custom js -->
+    <script src="/js/custom.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#addEmployeeDetailsForm").submit(function (event) {
+                // var fields = ["company", "role", "designation", "ofcEmployeeAddress1", "ofcCity", "ofcPincode", "ofcCountry", "ofcMobilePhone", "ofcEmployeeEmailId", "localEmployeeAddress1", "localCity", "localPincode", "aadhaarNumber", "panNumber", "pfNumber", "gender", "dob", "educationLevel", "qualification", "instituteName", "passingYear", "score", "highestEducation", "emergencyContactPerson", "contactRelationship", "contactPersonNumber", "medications", "bloodGroup", "familyMemberName", "familyRelationship"];
+
+                for (var i = 0; i < fields.length; i++) {
+                    var field = fields[i];
+                    var value = $("#" + field).val().trim();
+
+                    if (value === "") {
+                        $("#" + field).addClass("is-invalid");
+                        $("#" + field + "-feedback").show();
+                        event.preventDefault();
+                    }
+                }
+
+                // If all fields are valid, store the form data in the hidden field
+                var formData = {
+                    employeeName: $("#employeeName").val(),
+                    employeeDoj: $("#employeeDoj").val(),
+                    employeeCode: $("#employeeCode").val(),
+                    department: $("#department").val(),
+                    employeeDesignation: $("#employeeDesignation").val(),
+                    workLocation: $("#workLocation").val(),
+                    reportingManager: $("#reportingManager").val(),
+                    employeeType: $("#employeeType").val(),
+                    companyEmail: $("#companyEmail").val(),
+                    workPhone: $("#workPhone").val(),
+                    company: $("#company"),
+                    hod: $("#hod"),
+                    businessUnit: $("#businessUnit"),
+                    function: $("#function"),
+                    grade: $("#grade"),
+                    gradeLevel: $("#gradeLevel"),
+                    role: $("#role"),
+                    corporate: $("#corporate"),
+                    office: $("#office"),
+                    supervisorName: $("#supervisorName"),
+                    supervisor: $("#supervisor"),
+                    employeeOfficer: $("#employeeOfficer"),
+                    employementTerm: $("#employementTerm"),
+                    ofcEmployeeAddress1: $("#ofcEmployeeAddress1"),
+                    ofcEmployeeAddress2: $("#ofcEmployeeAddress2"),
+                    ofcCity: $("#ofcCity"),
+                    ofcPincode: $("#ofcPincode"),
+                    ofcCountry: $("#ofcCountry"),
+                    ofcWorkEmail: $("#ofcWorkEmail"),
+                    ofcEmployeeEmailId: $("#ofcEmployeeEmailId"),
+                    ofcMobilePhone: $("#ofcMobilePhone"),
+                    ofcWorkPhone: $("#ofcWorkPhoneExtn"),
+                    localEmployeeAddress1: $("#localEmployeeAddress1"),
+                    localEmployeeAddress2: $("#localEmployeeAddress2"),
+                    localCity: $("#localCity"),
+                    localPincode: $("#localPincode"),
+                    localCountry: $("#localCountry"),
+                    localWorkEmail: $("#localWorkEmail"),
+                    localEmployeeEmailId: $("#localEmployeeEmailId"),
+                    localMobilePhone: $("#localMobilePhone"),
+                    localWorkPhoneExtn: $("#localWorkPhoneExtn"),
+                    pmntEmployeeAddress1: $("#pmntEmployeeAddress1"),
+                    pmntEmployeeAddress2: $("#pmntEmployeeAddress2"),
+                    pmntCity: $("#pmntCity"),
+                    pmntPincode: $("#pmntPincode"),
+                    pmntCountry: $("#pmntCountry"),
+                    expDesignation: $("#expDesignation"),
+                    keyRoles: $("#keyRoles"),
+                    achievements: $("#achievements"),
+                    emergencyContactPerson: $("#emergencyContactPerson"),
+                    contactRelationship: $("#contactRelationship"),
+                    contactPersonNumber: $("#contactPersonNumber"),
+                    emergencyCity: $("#emergencyCity"),
+                    emergencyState: $("#emergencyState"),
+                    emergencyZip: $("#emergencyZip"),
+                    emergencyCountry: $("#emergencyCountry"),
+                    medications: $("#medications"),
+                    bloodGroup: $("#bloodGroup"),
+                    doctorName: $("#doctorName"),
+                    doctorHomePhone: $("#doctorHomePhone"),
+                    doctorMobilePhone: $("#doctorMobilePhone"),
+                    familyMemberName: $("#familyMemberName"),
+                    familyRelationship: $("#familyRelationship"),
+                    familyOccupation: $("#familyOccupation"),
+                    familyDob: $("#familyDob"),
+                    familyAge: $("#familyAge"),
+                    familyDependent: $("#familyDependent"),
+                    familyGender: $("#familyGender"),
+                    familyNationality: $("#familyNationality"),
+                    familyExpired: $("#familyExpired"),
+                    familyWorking: $("#familyWorking"),
+                };
+                $("#formData").val(JSON.stringify(formData));
+            });
+        });
+
+        function addEmployeeDetails() {
+            var form = document.getElementById('addEmployeeDetailsForm');
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                form.classList.add('was-validated');
+            } else {
+                var formData = JSON.parse($("#formData").val());
+
+                $.ajax({
+                    url: "/submitEmployeeDetails",
+                    method: "POST",
+                    data: formData,
+                    dataType: "JSON",
+                    success: function (data) {
+                        if (data.success) {
+                            then(function () {
+                                location.reload();
+                            });
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+
+</body>
+
+</html>
